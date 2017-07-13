@@ -3,6 +3,8 @@ from spn.sum_node import SumNode
 from spn.normal_leaf_node import NormalLeafNode
 from spn.multi_normal_leaf_node import MultiNormalLeafNode
 
+#Simplistic enough. The node counter needs no explanation. Note that a MN leaf node is parametrized by K(K+1)/2 + K parameters, i.e. K(K+3)/2 params - the K-length mean vector and the cov matrix ( which is symmetric and thus requires only the K entries along the diagonal plus K(K-1)/2 off-diagonal entries on any one side )
+
 def count_nodes(network):
 	nextnodes = [network.root.children[0]]
 	count = 0

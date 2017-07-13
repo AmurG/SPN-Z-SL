@@ -1,5 +1,7 @@
 import copy
 
+#Mostly just wrappers here. See comments on node, and also look up scipy's documentation for its multivariate normal class.
+
 from .node import Node
 from .multi_normal_stat import MultiNormalStat
 

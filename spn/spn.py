@@ -6,6 +6,10 @@ from .product_node import ProductNode
 from .normal_leaf_node import NormalLeafNode
 from .multi_normal_leaf_node import MultiNormalLeafNode
 
+#Code is straightforward : Alternately k-mean cluster and add sum nodes and on the other half, induce product nodes. Corrthresh is the most important hyperparameter for tuning in effect. Equalweight corresponds to a bayesian interpretation vs frequentist. Consider two clusters in the data constituting 10% and 90% of the data. So in this case the SPN forms a sum node with two children with weights 0.1 - cluster A - and 0.9 for cluster B. Now a new sample comes along, and the likelihood from cluster A is > from cluster B. However, A has a lower prior probability, so it's possible that P(sample|A)P(A) < P(sample|B)P(B) even though P(sample|A) > P(sample|B).
+
+#The mvscope parameter should not be too large, but neither too small. A large mvscope moves the model closer and closer to GMM performance. One good sanity check is to do this and see if the average Log-likelihood from the SPN is moving closer or further from GMM performance, if further, there's likely some issue. ( Test on abalone or Iris for this - they are standard benchmarks for this kind of thing )
+
 class SPNParams:
 	"""
 	Parameters

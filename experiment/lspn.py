@@ -7,7 +7,10 @@ from spn.sum_node import SumNode
 from spn.product_node import ProductNode, mult
 from spn.normal_leaf_node import NormalLeafNode
 from spn.multi_normal_leaf_node import MultiNormalLeafNode
-from threading import Pool
+
+#LearnSPN was introduced in the Gens, Domingos paper via K-means clustering : http://homes.cs.washington.edu/~pedrod/papers/mlc13.pdf
+#Incremental LSPN in this case runs off augmented SPNs : http://homes.cs.washington.edu/~pedrod/papers/pami17.pdf ( See Fig 3 ). Please check out the papers here in general : http://spn.cs.washington.edu/
+
 def run_incremental_lspn(train_files, dtype=np.float32, batch_size=100):
 	for train_file in train_files:
 		obs = np.loadtxt(train_file, delimiter=",", dtype=dtype)

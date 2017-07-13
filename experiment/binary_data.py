@@ -1,5 +1,8 @@
 from .kfold import run
 
+#This is a standard 20-fold set of discrete datasets. Check the following : https://github.com/UCLA-StarAI/Density-Estimation-Datasets
+#For argument-data, check .kfold
+
 T = True
 F = False
 BN = "binarynormal"

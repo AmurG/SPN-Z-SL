@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse
 
+#More or less ignore this file. It just test-runs multivariate normal routines off scipy mostly
+
 from spn.spn import *
 
 def gen_mvn_data(n):

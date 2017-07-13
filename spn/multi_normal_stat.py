@@ -1,6 +1,9 @@
 import numpy as np
 from scipy.stats import multivariate_normal
 
+#A few things to understand here : the 1e-4 bit is due to the fact that the covariance matrix, if not enforced with that bit, can end up with too many zeroes and hence singular. This is a problem : such a covariance matrix doesn't define a valid probability distribution and cannot be used to get the logpdf method ( you can try this yourself by removing that part and testing on a dataset with many zeroes such as GasSenH ) 
+
+
 class MultiNormalStat:
 
 	@staticmethod
@@ -26,6 +29,8 @@ class MultiNormalStat:
 		except:
 			self.cov[np.diag_indices_from(self.cov)] += 1e-4
 			return multivariate_normal.logpdf(x, self.mean, self.cov)
+
+#The part where the covariance and mean get updated ( the update function ) is covered here : https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance
 
 	def update(self, x, n):
 		k = x.shape[0]

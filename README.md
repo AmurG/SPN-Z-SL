@@ -1,3 +1,7 @@
+# This fork exists to comment and document the repository for the ease of new interns working on the SPN API
+# Comments by Amur Ghose
+
+
 # SPN-Z-SL
 Structure Learning for Continuous Variables in SPN-Z
 

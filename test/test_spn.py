@@ -8,6 +8,8 @@ from spn.sum_node import *
 from spn.multi_normal_leaf_node import *
 from spn.normal_leaf_node import *
 
+#Can be ignored. More or less just playtests the data in a small SPN framework with one node or very few.
+
 def normal_test_data(n):
 	np.random.seed(0)
 	mean = np.array([1., 2., 3.])

@@ -3,6 +3,8 @@ from scipy.misc import logsumexp
 
 from .node import Node
 
+#These are fairly standard operations. Evaluate just puts the value from an observed sample into nodes. Hard EM is a case of EM where samples are wholly assigned to clusters instead of being fractionally so ( check comments elsewhere as well )
+
 class SumNode(Node):
 	def __init__(self, n, scope):
 		super(SumNode, self).__init__(n, scope)

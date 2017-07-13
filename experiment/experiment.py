@@ -1,5 +1,5 @@
 import numpy as np
-from .lspn import run_incremental_lspn
+from lspn import run_incremental_lspn
 
 class Experiment:
         def __init__(self, model, trainfiles, testfiles):

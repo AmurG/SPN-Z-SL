@@ -1,3 +1,4 @@
+#Self-explanatory. Node objects ( prod, sum, leaf ) form the backbone of the SPN
 
 class Node:
 	def __init__(self, n, scope):

@@ -4,15 +4,15 @@ import pickle
 
 import numpy as np
 
-from spn.spn import *
 from util.util import *
 from experiment import Experiment, ILSPN_Experiment
-
 
 from spn.sum_node import SumNode
 from spn.product_node import ProductNode
 from spn.multi_normal_leaf_node import MultiNormalLeafNode
 from spn.normal_leaf_node import NormalLeafNode
+
+#To understand kfold runs, read the wikipedia article on cross-validation. That's essentially what's going on here. The paper used k=10 mostly.
 
 def gen_random_node(scope, nodetype):
 	if len(scope)==1:
@@ -106,9 +106,9 @@ def run(vartype, traintest, name, numvar, numcomp, batchsize, mergebatch, corrth
 		numnodes = count_nodes(model)
 		numparams = count_params(model)
 		print('Loglhd: {0:.3f}'.format(result))
-		print('Time: {0:.3f}'.format(t))
-		print('Number of nodes: {0}'.format(numnodes))
-		print('Number of parameters: {0}'.format(numparams))
+		#print('Time: {0:.3f}'.format(t))
+		#print('Number of nodes: {0}'.format(numnodes))
+		#print('Number of parameters: {0}'.format(numparams))
 		with open(resultpath, 'w') as g:
 			g.write('Loglhd: {0:.3f}\n'.format(result))
 			g.write('Time: {0:.3f}\n'.format(t))
